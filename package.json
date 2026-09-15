@@ -1,0 +1,15 @@
+{
+  "name": "sudoku-rush-workspace",
+  "version": "1.0.0",
+  "description": "Sudoku Rush - Modern SvelteKit Web App + Microservice API",
+  "private": true,
+  "scripts": {
+    "test": "npm run test:backend && npm run test:frontend",
+    "test:backend": "npm --prefix backend test",
+    "test:frontend": "npm --prefix frontend test",
+    "build": "npm --prefix frontend run build",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "dev:backend": "npm --prefix backend run dev",
+    "start:backend": "npm --prefix backend start"
+  }
+}

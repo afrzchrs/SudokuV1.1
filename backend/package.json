@@ -1,0 +1,24 @@
+{
+  "name": "sudoku-backend-service",
+  "version": "1.0.0",
+  "description": "Lightweight Microservice for Sudoku Rush: puzzle generator, validator, and Supabase leaderboard via Drizzle ORM",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test test/*.test.js",
+    "db:push": "drizzle-kit push"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "drizzle-orm": "^0.39.3",
+    "express": "^4.21.2",
+    "postgres": "^3.4.5"
+  },
+  "devDependencies": {
+    "drizzle-kit": "^0.30.4"
+  }
+}

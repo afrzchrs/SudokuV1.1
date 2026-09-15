@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Riza",
+    "time": "00:20:25",
+    "timeSeconds": 1225,
+    "dificulty": "Easy",
+    "difficulty": "Easy",
+    "timestamp": "2025-07-15 10:41:40"
+  },
+  {
+    "name": "Riza",
+    "time": "00:17:33",
+    "timeSeconds": 1053,
+    "dificulty": "Mediocre",
+    "difficulty": "Mediocre",
+    "timestamp": "2025-07-16 03:39:37"
+  },
+  {
+    "name": "Riza",
+    "time": "00:51:45",
+    "timeSeconds": 3105,
+    "dificulty": "Genius",
+    "difficulty": "Genius",
+    "timestamp": "2025-07-16 07:28:34"
+  },
+  {
+    "name": "Antigravity",
+    "time": "00:05:59",
+    "timeSeconds": 359,
+    "dificulty": "Easy",
+    "difficulty": "Easy",
+    "timestamp": "2026-09-15 22:20:40"
+  },
+  {
+    "name": "TestBot_9144",
+    "time": "00:04:15",
+    "timeSeconds": 255,
+    "dificulty": "Easy",
+    "difficulty": "Easy",
+    "timestamp": "2026-09-15 22:21:19"
+  }
+]
