@@ -2,6 +2,7 @@ process.env.NODE_ENV = 'test';
 import { describe, it, before, after } from 'node:test';
 import assert from 'node:assert/strict';
 import { app } from '../src/server.js';
+import { closeDatabaseConnection } from '../src/db/client.js';
 
 describe('Sudoku Rush Microservice API Integration Tests', () => {
   let server;
@@ -20,6 +21,7 @@ describe('Sudoku Rush Microservice API Integration Tests', () => {
       if (server.closeAllConnections) server.closeAllConnections();
       await new Promise(resolve => server.close(resolve));
     }
+    await closeDatabaseConnection();
   });
 
   describe('GET /api/health', () => {

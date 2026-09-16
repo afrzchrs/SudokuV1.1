@@ -17,6 +17,7 @@ const LOCAL_JSON_PATH = path.resolve(__dirname, '../../data/skor.json');
 
 let db = null;
 let isConnectedToPostgres = false;
+let pgClient = null;
 
 // Check if valid PostgreSQL DATABASE_URL is configured
 const connectionString = process.env.DATABASE_URL;
@@ -28,12 +29,12 @@ const isPlaceholder = !connectionString ||
 
 if (!isPlaceholder) {
   try {
-    const client = postgres(connectionString, {
+    pgClient = postgres(connectionString, {
       prepare: false,
       connect_timeout: 5,
       max: 10
     });
-    db = drizzle(client, { schema });
+    db = drizzle(pgClient, { schema });
     isConnectedToPostgres = true;
     console.log('Connected to Supabase / PostgreSQL with Drizzle ORM');
   } catch (err) {
@@ -41,7 +42,15 @@ if (!isPlaceholder) {
     isConnectedToPostgres = false;
   }
 } else {
-  console.log('ℹNo live DATABASE_URL provided or placeholder detected. Operating in local JSON storage mode.');
+  console.log('ℹ No live DATABASE_URL provided or placeholder detected. Operating in local JSON storage mode.');
+}
+
+export async function closeDatabaseConnection() {
+  if (pgClient) {
+    try {
+      await pgClient.end({ timeout: 2 });
+    } catch (_) {}
+  }
 }
 
 // Helper to read local JSON backup

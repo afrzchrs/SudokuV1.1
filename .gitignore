@@ -35,4 +35,6 @@ Thumbs.db
 .idea/
 .vscode/*
 !.vscode/extensions.json
-implementation_plan
+
+
+implementation_plan.md
